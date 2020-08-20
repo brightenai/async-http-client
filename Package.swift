@@ -33,10 +33,11 @@ let package = Package(
             dependencies: ["NIO", "NIOHTTP1", "NIOSSL", "NIOConcurrencyHelpers", "NIOHTTPCompression",
                            "NIOFoundationCompat", "NIOTransportServices", "Logging"]
         ),
-        .testTarget(
-            name: "AsyncHTTPClientTests",
-            dependencies: ["NIO", "NIOConcurrencyHelpers", "NIOSSL", "AsyncHTTPClient", "NIOFoundationCompat",
-                           "NIOTestUtils", "Logging"]
-        ),
+//        .testTarget(
+//            name: "AsyncHTTPClientTests",
+//            dependencies: ["NIO", "NIOConcurrencyHelpers", "NIOSSL", "AsyncHTTPClient", "NIOFoundationCompat",
+////                           "NIOTestUtils",
+//                           "Logging"]
+//        ),
     ]
 )
