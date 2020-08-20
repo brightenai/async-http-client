@@ -540,11 +540,11 @@ class HTTP1ConnectionProvider {
             return handshakePromise.futureResult.flatMap {
                 channel.pipeline.addHTTPClientHandlers(leftOverBytesStrategy: .forwardBytes)
             }.flatMap {
-                #if canImport(Network)
-                    if #available(OSX 10.14, iOS 12.0, tvOS 12.0, watchOS 6.0, *), bootstrap.underlyingBootstrap is NIOTSConnectionBootstrap {
-                        return channel.pipeline.addHandler(HTTPClient.NWErrorHandler(), position: .first)
-                    }
-                #endif
+//                #if canImport(Network)
+//                    if #available(OSX 10.14, iOS 12.0, tvOS 12.0, watchOS 6.0, *), bootstrap.underlyingBootstrap is NIOTSConnectionBootstrap {
+//                        return channel.pipeline.addHandler(HTTPClient.NWErrorHandler(), position: .first)
+//                    }
+//                #endif
                 return channel.eventLoop.makeSucceededFuture(())
             }.flatMap {
                 switch self.configuration.decompression {
